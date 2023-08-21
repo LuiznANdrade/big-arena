@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/Default.svg" type="image/x-icon">
+    <title>Big Arena</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="big-login" style="display: none;">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
+            <span id="carregando">CARREGANDO A ARENA...</span>
+        </div>
+    <div class="big-animations">
+        <div class="big-login-header">
+         <img src="imagens/big-logo.svg" alt="">
+         <div class="interationLogin">
+             <a href=""><img src="imagens/discord.svg" alt=""></a>
+             <a href=""><img src="imagens/instagram.svg" alt=""></a>
+             <a href=""><img src="imagens/facebook.svg" alt=""></a>
+             <a href=""><img src="imagens/vk.svg" alt=""></a>
+             <button id="feedback">FEEDBACK</button>
+         </div>
+        </div>
+        <div class="big-login-show">
+         <div class="big-login-show-one">
+             <h1>BIG ARENA</h1>
+             <h2>Esta arena é um campo dinâmico e eletrizante, repleto de possibilidades para aqueles que buscam adrenalina e glória. Se você acaba de entrar na batalha, saiba que é bem-vindo(a)!</h2>
+             <div class="big-login-show-one-buttons">
+                 <button id="playnow">JOGAR AGORA</button>
+                 <div class="qtdplayers">
+                     <img src="imagens/playersOn.svg" alt="">
+                     <h1 id="qtdplayers">Jogadores online: 241</h1>
+                 </div>
+             </div>
+         </div>
+         <div class="big-login-show-two">
+             <img src="imagens/big-render.svg" alt="">
+         </div>
+        </div>
+    </div>
+    </div>
+    <div class="big-lobby" style="display: block;">
+        <div class="big-lobby-header">
+            <div class="big-header-left">
+
+                <div class="big-lobby-header-profile">
+                    <img id="myImage" src="imagens/Default.svg" alt="">
+                    <div class="big-lobby-header-profile-credentials">
+                        <h1 id="playerName">PLAYER NAME</h1>
+                    </div>
+                    <button id="buttonStore">LOJA</button>
+                    <button id="buttonInventario">INVENTARIO</button>
+                    <button id="buttonRank">RANKING</button>
+                    <button id="buttonConfig">CONFIGURAÇÂO</button>
+                </div>
+            </div>
+            <div class="big-header-right">
+                <div class="balanceGold">
+                    <img src="imagens/money.png" alt="">
+                    <span id="totalGold">1000</span>
+                </div>
+
+                <div class="balanceDiamond">
+                    <img src="imagens/diamond.png" alt="">
+                    <span id="totalDiamond">1000</span>
+                </div>
+
+                <img src="imagens/big-logo.svg" alt="" id="ArenaImage">
+            </div>
+        </div>
+        <div class="big-lobby-show">
+            <div class="big-lobby-selectmode" style="display: none;">
+                <div class="header-mode">
+                    <h1 class="titleAba">SELECIONE UM MODO DE JOGO</h1>
+                    <button class="returnLobby" id="return-lobby-selectmode">RETORNAR AO LOBBY</button>
+                </div>
+                <div class="slide-mode">
+                    <img src="imagens/game1.svg" alt="" id="game1">
+                    <img src="imagens/game2.svg" alt="" id="game2">
+                    <img src="imagens/game3.svg" alt="" id="game3">
+                    <img src="imagens/game4.svg" alt="" id="game4">
+                </div>
+            </div>
+            <div class="big-lobby-inventory" style="display: none;">
+                <div class="header-mode">
+                    <h1 class="titleAba">INVENTARIO</h1>
+                    <button class="returnLobby" id="return-lobby-inv">RETORNAR AO LOBBY</button>
+                </div>
+                <div class="slide-inventory">
+                </div>
+            </div>
+            <div class="big-lobby-ranking" style="display: none;">
+                <div class="header-ranking">
+                    <h1 class="titleAba">RANKING TOP 25</h1>
+                    <button class="returnLobby" id="return-lobby-ranking">RETORNAR AO LOBBY</button>
+                </div>
+                <div class="slide-inventory">
+                    <h1>SOMOS OS MELHORES DO SERVIDOR</h1>
+
+                    <div class="backTable">
+                        <table id="rankingTable">
+                            <thead>
+                               
+                            </thead>
+                            <tbody>
+                                <!-- Linhas da tabela serão adicionadas dinamicamente usando JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="big-lobby-config" style="display: none;">
+                <div class="header-ranking">
+                    <h1 class="titleAba">CONFIGURAÇÂO</h1>
+                    <button class="returnLobby" id="return-lobby-ranking">RETORNAR AO LOBBY</button>
+                </div>
+                <div class="slide-inventory">
+                    <h1>SOMOS OS MELHORES DO SERVIDOR</h1>
+                </div>        
+            </div>
+            <div class="big-container-lobby">
+                <div class="big-lobby-loja" id="itemContainer">
+                    <!-- <div id="item1">
+                        <div class="item-header-principal">
+                            <h1>NOME ITEM</h1>
+                            <div class="valueItem">
+                                <img src="imagens/diamond.png" alt="">
+                                <span>1000</span>
+                            </div>
+                        </div>
+                        <img id="image-item1" src="imagens/arma.png" alt="">
+                    </div>
+                    <div id="item2">
+                        <div class="item-header">
+                            <h1>NOME ITEM</h1>
+                            <div class="valueItem">
+                                <img src="imagens/diamond.png" alt="">
+                                <span>1000</span>
+                            </div>
+                        </div>
+                        <img id="image-item2" src="imagens/arma.png" alt="">
+                    </div>
+                    <div id="item3">
+                        <div class="item-header">
+                            <h1>NOME ITEM</h1>
+                            <div class="valueItem">
+                                <img src="imagens/diamond.png" alt="">
+                                <span>1000</span>
+                            </div>
+                        </div>
+                        <img id="image-item3" src="imagens/arma.png" alt="">
+                    </div>
+                    <div id="item4">
+                        <div class="item-header">
+                            <h1>NOME ITEM</h1>
+                            <div class="valueItem">
+                                <img src="imagens/diamond.png" alt="">
+                                <span>1000</span>
+                            </div>
+                        </div>
+                        <img id="image-item4" src="imagens/arma.png" alt="">
+                    </div>
+                    <div id="item5">
+                        <div class="item-header">
+                            <h1>NOME ITEM</h1>
+                            <div class="valueItem">
+                                <img src="imagens/diamond.png" alt="">
+                                <span>1000</span>
+                            </div>
+                        </div>
+                        <img id="image-item5" src="imagens/arma.png" alt="">
+                    </div> -->
+                    <button id="return-lobby-loja">RETORNAR AO LOBBY</button>
+                </div>
+            </div>
+            <div class="big-lobby-action" style="display: none;">
+                <div class="big-lobby-show-bottom">
+                    <div class="big-lobby-show-bottom-atualizacao">
+                        <img id="imageAtt" src="imagens/ImageAtualização.svg" alt="">
+                        <h1>ATUALIZAÇÂO 0.1</h1>
+                        <span>ESTOU CRIANDO AINDA A PRIMEIRA VERSÂO DO FRONT-END</span>
+                    </div>
+    
+                    <div class="groupMode">
+                        <button id="selectMode">SELECIONE UM MODO</button>
+                        <button id="buttonPlay"><img src="imagens/buttonIniciar.svg" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="big-hud-player">
+        <div class="hud-player-placar">
+            <div class="playerTeamOne">SSSSSSSS</div>
+            <div class="placar">SSSSSSSS</div>
+            <div class="playerTeamTwo">SSSSSSSS</div>
+        </div>
+
+        <div class="hud-player-status">
+            <div class="hudDisplayStatus" style="display: flex;">
+                <div class="ultimatePlace"><div class="backPlace"><div class="healthBack"><div class="healthDisplay"></div></div></div><div class="iconePlace"><div class="hudDisplayText"><img id="iconeCoracao" class="img" src="imagens/coracao.svg"></div></div></div>
+                <div class="ultimatePlace" id="ultiArmour" style="display: flex;"><div class="backPlace"><div class="healthBack"><div class="armourDisplay"></div></div></div><div class="iconePlace"><div class="hudDisplayText"><img id="iconeColete" class="img" src="imagens/escudo.svg"></div></div></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+<script src="config.js"></script>
+</html>
